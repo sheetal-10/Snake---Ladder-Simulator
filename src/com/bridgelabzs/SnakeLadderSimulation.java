@@ -7,12 +7,15 @@ package com.bridgelabzs;
  */
 public class SnakeLadderSimulation {
 	/**
-	 * creating start position zero for the palyer
-	 * returning player position 
+	 * creating die roll formula
+	 * returning random no between 1 to 6 
 	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome to Snake and Ladder Simulation Program ");
+		//initialising player position
 		int player_position = 0;
-		System.out.println("\nStarting position of player is "  + player_position );
+		//die roll giving random no between 1 to 6
+		int die = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+		System.out.println("\nDice roll: " + die);
 	}
 }
