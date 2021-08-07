@@ -12,6 +12,7 @@ public class SnakeLadderSimulation {
 	 * checking for option after die outcome using switch case
 	 * iterating till winning position(100) using while loop
 	 * player gets exact winning position 100
+	 * counting and displaying the number of times die is rolled
 	 */
 	
 	public static final int WINNING_POSITION = 100;		//constant
@@ -20,10 +21,12 @@ public class SnakeLadderSimulation {
 		System.out.println("Welcome to Snake and Ladder Simulation Program ");
 		
 		int player_position = 0;		//initialising player position
+		int die_counter = 0;			//initialising die count
 		
 		while ( WINNING_POSITION > player_position ) {
 		
 			int die = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+			die_counter++;
 			int remainingPosition = WINNING_POSITION - player_position;
 			int option = (int) (Math.floor(Math.random() * 10) % 3);
 			if( remainingPosition >= die ) {
@@ -43,8 +46,9 @@ public class SnakeLadderSimulation {
 							player_position = 0;		
 				}
 			}	
+			System.out.println("Player position: " + player_position);
 		}
-		System.out.println("Player position: " + player_position);
 		System.out.println("Congratulations!! Player won the Game");
+		System.out.println("Dice rolled " + die_counter + " times.");
 	}
 }
